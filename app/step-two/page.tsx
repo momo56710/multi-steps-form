@@ -66,13 +66,13 @@ const StepTwo = ({ searchParams }: any) => {
           </label>
           <span className="ml-3 text-sm font-medium ">Yearly</span>
         </div>
-        <div className="max-md:grid max-md:grid-cols-2 max-md:pt-4">
+        <div className="grid grid-cols-2 pt-4">
           <button
             onClick={() => {
               router.back();
             }}
             type="submit"
-            className="md:absolute bottom-2 left-7 opacity-50  focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm w-fit  px-5 py-2.5 text-center self-end"
+            className="opacity-50  focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm w-fit  px-5 py-2.5 text-center self-end"
           >
             GO Back
           </button>
@@ -81,7 +81,7 @@ const StepTwo = ({ searchParams }: any) => {
               navigate();
             }}
             type="submit"
-            className="md:absolute max-md:justify-self-end bottom-2 right-0 text-white bg-MarineBlue  focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm w-fit  px-5 py-2.5 text-center self-end"
+            className="justify-self-end bottom-2 right-0 text-white bg-MarineBlue  focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm w-fit  px-5 py-2.5 text-center self-end"
           >
             Next Step
           </button>
