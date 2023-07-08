@@ -1,15 +1,24 @@
-import React from "react";
+"use client";
+import React, { useEffect, useState } from "react";
 import { plans } from "@/objects/plans";
 import { AddOns } from "@/objects/addOns";
+import { useRouter } from "next/navigation";
+
 type params = {
   plan: string;
   subTime: string;
   addOns: string;
 };
 const Card = ({ plan, subTime, addOns }: params) => {
+  const [isMonth, setIsMonth] = useState(true);
+
   let totalAddonsPrice = 0;
-  const isMonth = subTime === "true" ? true : false;
+  useEffect(() => {
+    subTime === "true" ? setIsMonth(true) : setIsMonth(false);
+  }, []);
+
   const selectedPlan = plans[Number(plan)];
+  console.log(isMonth);
   const arr = addOns.split(",");
   return (
     <div className="text-MarineBlue pt-10">
@@ -27,7 +36,14 @@ const Card = ({ plan, subTime, addOns }: params) => {
               <span>{selectedPlan.price * 10}/yr</span>
             )}
           </div>
-          <p className="text-sm underline pb-2 opacity-50">Change</p>
+          <p
+            className="text-sm underline pb-2 opacity-50 cursor-pointer"
+            onClick={() => {
+              isMonth ? setIsMonth(false) : setIsMonth(true);
+            }}
+          >
+            Change
+          </p>
         </div>
 
         <hr />
