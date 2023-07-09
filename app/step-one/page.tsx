@@ -11,6 +11,7 @@ const StepOne = () => {
   const router = useRouter();
   const formSubmit = (e: any) => {
     e.preventDefault();
+    if (payload.phoneNumber )
     router.push(
       `/step-two?name=${payload.name}&email=${payload.email}&phone_number=${payload.phoneNumber}`
     );
@@ -72,8 +73,9 @@ const StepOne = () => {
               Phone Number
             </label>
             <input
-              type="number"
+              type="tel"
               id="phone-number"
+              pattern="[+]+[0-9]{3}+[0-9]{5}"
               className="bg-gray-50 text-MarineBlue font-bold border border-gray-300 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5  "
               placeholder="e.g. +1234567890"
               required

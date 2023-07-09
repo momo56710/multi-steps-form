@@ -22,7 +22,7 @@ export default function RootLayout({
             <div className="md:col-span-2 max-md:absolute max-md:flex  max-md:top-0 max-md:left-0  max-md:w-screen max-md:h-[20em] max-md:z-[-1] ">
               <NavBar />
             </div>
-            <div className="md:col-span-5 min-h-fit py-6 max-md:row-span-3">
+            <div className="md:col-span-5 max-md:min-h-[400px] md:min-h-[450px] min-h-fit py-6 max-md:row-span-3">
               {children}
             </div>
           </div>
